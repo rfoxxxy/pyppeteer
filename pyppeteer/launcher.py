@@ -196,7 +196,7 @@ class Launcher(object):
         if self.proc.poll() is None and not self.chromeClosed:
             self.chromeClosed = True
             try:
-                self.proc.terminate()
+                self.proc.terminate(9)
                 self.proc.wait()
             except Exception:
                 # browser process may be already closed
